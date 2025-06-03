@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhtlb4axrcidf"]
+
+[ext_resource type="PackedScene" uid="uid://c3ux4kboug11k" path="res://tree.tscn" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://rk8ftk54qnmb" path="res://pixil-frame-0 (1).png" id="1_feb5d"]
+[ext_resource type="Script" uid="uid://cpxst5k5peq2v" path="res://button.gd" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://owgxg0flbddq" path="res://node.gd" id="5_ryrav"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(256, 256)
+scale = Vector2(4, 4)
+texture = ExtResource("1_feb5d")
+
+[node name="Tree" parent="." instance=ExtResource("1_80nbo")]
+position = Vector2(264, 320)
+scale = Vector2(8, 8)
+
+[node name="Button" type="Button" parent="."]
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 487.0
+offset_bottom = 320.0
+text = "물주기
+"
+script = ExtResource("2_e2o6t")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("5_ryrav")
+
+[connection signal="pressed" from="Button" to="Tree" method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Node" method="_on_button_pressed"]
