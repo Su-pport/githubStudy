@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://4jpvcrxrnywr"]
+
+[ext_resource type="PackedScene" uid="uid://c5e7o45ns4xlm" path="res://room/base_room.tscn" id="1_u3g24"]
+[ext_resource type="PackedScene" uid="uid://di5ko5fjncf72" path="res://player/player.tscn" id="2_5hyxi"]
+[ext_resource type="PackedScene" uid="uid://bjleamsuppfpf" path="res://25.06.05_enemies_and_animation/enemies/big_demon.tscn" id="3_cj061"]
+
+[node name="stage_1" type="Node2D"]
+
+[node name="base_room" parent="." instance=ExtResource("1_u3g24")]
+
+[node name="enemy" parent="base_room/enemy_gen" index="0" instance=ExtResource("3_cj061")]
+position = Vector2(687, 286)
+scale = Vector2(2, 2)
+
+[node name="player" parent="." instance=ExtResource("2_5hyxi")]
+position = Vector2(207, 165)
+scale = Vector2(2.5, 2.5)
+collision_layer = 3
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[editable path="base_room"]
