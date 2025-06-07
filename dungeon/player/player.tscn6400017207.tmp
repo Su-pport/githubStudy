@@ -171,8 +171,9 @@ animation = &"death"
 frame = 16
 frame_progress = 1.0
 
-[node name="world_collision" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2.23517e-07, 3.5)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qjkh3")
 
 [node name="hurtbox" parent="." instance=ExtResource("6_g6k8r")]
