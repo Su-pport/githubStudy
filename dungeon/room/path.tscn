@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpgta01hhdpro"]
+
+[ext_resource type="Script" uid="uid://3mi7yjrayl18" path="res://room/path.gd" id="1_pu8bp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gl26k"]
+size = Vector2(32, 32)
+
+[node name="path" type="Area2D"]
+script = ExtResource("1_pu8bp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gl26k")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
